@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Local Storage</title>
+		<script type="text/javascript">
+			function setValues()
+			{
+				var h = document.getElementById("heading");
+				var a = document.getElementById("article");
+				if(typeof(Storage) != "undefined")
+				{
+					if(localStorage.getItem("c") != null)
+					{
+						h.style.color = localStorage.getItem("c");
+						a.style.color = localStorage.getItem("c");
+					}
+					if(localStorage.getItem("s") != null)
+					{
+						a.style.fontSize = localStorage.getItem("s")+"px";
+					}
+				}
+			}
+			window.onstorage = setValues;
+		</script>
+	</head>
+	<body>
+		<h2 id="heading">PROGRAM #8 : Program to demonstrate HTML5 LocalStorage</h2>
+		<p id="article">A Website serves two pages. The first page has an article which has elements. The second page has two text fields which allow formatting information 			for the elements of the first  page. The second page also has a button for setting Local Storage keys. Using local storage and localStorage events, 			control the formatting of page 1 through page 2.</p>
+	</body>
+</html>

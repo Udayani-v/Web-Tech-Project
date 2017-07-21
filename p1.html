@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head />
+<body onload="content()"> 
+	<h2 id="theh2"> The h2 content </h2>
+	<p id="thep"> The p content </p>
+	<script type="text/javascript">
+	<!--
+		window.onstorage=content;
+		function content()
+		{
+			//alert("in content");
+			if (localStorage["col"]!=null)
+			{
+				document.getElementById("theh2").style.color=localStorage["col"];
+				document.getElementById("thep").style.color=localStorage["col"];
+			}
+			if (localStorage["ff"]!=null)
+			{
+				document.getElementById("theh2").style.textDecoration=localStorage["ff"];
+				document.getElementById("thep").style.textDecoration=localStorage["ff"];
+			}
+		}
+	//-->
+	</script>
+</body>
+</html>

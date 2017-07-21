@@ -1,0 +1,326 @@
+html
+{
+	overflow-y:scroll;
+}
+body
+{
+	background-image:url("nature-background.jpg");
+	background-repeat:no-repeat;
+}
+.divhead
+{
+	padding:20px;
+	background-color:#ADFF2F;
+	margin:0px;
+	border:0px;
+	padding-top:5px;
+}
+.crop2
+{
+	position:absolute;
+	right:30px;
+	top:110px;
+}
+.crop1
+{
+	margin-left:30px;
+	margin-top:80px;
+}
+
+.search
+{
+	position:absolute;
+	margin-top:25px;
+	margin-left:10px;
+	border-radius:10px;
+}
+.subdiv
+{
+	padding-right:5px;
+	border-right:5px;
+	margin-right:5px;
+	float:right;
+}
+.subdiv a
+{
+	text-decoration:none;
+	color:#006400;	
+}
+.div1
+{
+	padding:25px;
+	margin-top:-150px;
+	
+}
+.imgdiv
+{
+	padding-left:550px;
+}
+.div2
+{
+	padding-left:20px;
+}
+.div2 a
+{
+	font-style:bold;
+	text-decoration:none;
+	color:#006400;
+}
+.box
+{
+	width: 150px;
+	border: 1px solid black;
+	padding: 2px;
+	background-color:#ADFF2F;
+	text-align:center;
+	border-radius:20px
+	
+}
+
+h1
+{
+	color:#00FF00;
+	font-family:sans-serif;
+	font-size:30px;
+}
+.about
+{
+	padding:2px;
+	padding-top:-5px;
+	width:700px;
+	height:250px;
+	margin-left:280px;
+	margin-top:-50px;
+	background-color:hsla(0, 0%, 0%, 0.58);
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:15px
+	
+}
+
+
+.vid
+{
+	position:absolute;
+	right:30px;
+	top:320px;
+}
+.Video
+{
+	position:absolute;
+	left:400px;
+	top:250px
+}
+.vtext
+{
+	position:absolute;
+	right:50px;
+	top:450;
+	color:white;
+	text-decoration:none
+}
+.txt
+{
+	position:absolute;
+	right:200px;
+	top:350px;
+	color:white
+}
+.vtext:hover
+{
+	text-decoration:underline
+}
+
+.announce
+{
+	position:absolute;
+	margin-top:85px;
+	margin-left:30px;
+	background-color:#F0FFFF;
+	padding:2px;
+	padding-top:-5px;
+	width:800px;
+	height:250px;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:15px;
+	
+}
+
+.tips
+{
+	position:absolute;
+	margin-top:85px;
+	margin-left:900px;
+	background-color:#808000;
+	padding:2px;
+	padding-top:-5px;
+	width:270px;
+	height:600px;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:15px;
+}
+	
+
+
+
+.foot
+{
+	margin-top:780px;
+	padding:20px;
+	background-color:#7CFC00;
+	border-radius:10px
+}
+.foot a,.foot p
+{
+	color:#006400;
+	text-decoration:none;
+}
+.foot a:hover
+{
+	text-decoration:underline;
+}
+
+.dropdown {
+    position: relative;
+    left:1px;
+    display: inline-block;
+}
+.dropdown .dropdown-menu {
+	position: absolute;
+	top: 100%;
+	display: none;
+	margin: 1;
+	list-style: none; 
+	width: 50%;
+	padding: 0px;
+	border-radius:20px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown a {
+	display: block;
+	padding: 0.2em 0.2em;
+	text-decoration: none;
+	background: :#ADFF2F;
+	color:#ADFF2F;
+	font-size:18px;
+	text-align:center;
+	border-radius:20px;
+}
+.dropdown a:hover {
+	background: :#006400;
+}
+
+.events
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:250px;
+	margin-left:30px;
+	margin-top:440px;
+	background-color:hsla(0, 0%, 0%, 0.58);
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:15px;
+}
+	
+.prog
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:250px;
+	margin-left:480px;
+	margin-top:440px;
+	background-color:hsla(0, 0%, 0%, 0.58);
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:15px;
+}
+
+.event1
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:85px;
+	margin-left:0px;
+	margin-top:20px;
+	background-color:#FFFFFF;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:5px;
+}
+
+.event2
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:85px;
+	margin-left:0px;
+	margin-top:142px;
+	background-color:#FFFFFF;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:5px;
+}
+
+.prog1
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:85px;
+	margin-left:0px;
+	margin-top:20px;
+	background-color:#FFFFFF;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:5px;
+}
+
+.prog2
+{
+	position:absolute;
+	padding:2px;
+	padding-top:-5px;
+	width:350px;
+	height:85px;
+	margin-left:0px;
+	margin-top:142px;
+	background-color:#FFFFFF;
+	color:white;
+	font-style:bold;
+	font-size:14px;
+	font-family:"Georgia";
+	border-radius:5px;
+}
+	
+	
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		form{
+		
+		border: solid 3px orange;
+		margin:20px;
+		height:50px;
+		width:350px;
+		padding:10px;
+		}
+		
+	
+	</style>
+	</head>
+	<body>
+	
+		<form action="selectEasy.php" method="GET">
+		<input type="submit" value="Select Single"/>
+		</form>
+		
+		<form action="selectAll.php" method="GET">
+		<input type="submit" value="Select All"/>
+	
+		</form>
+		<form action="selectColumn.php" method="GET">
+		<input type="submit" value="Select Column"/>
+	
+		</form>
+		<form action="selectRows.php" method="GET">
+		
+		<input type="text" name="sel" placeholder="Enter name"/>
+		<input type="submit" value="Select Rows"/>
+	
+		</form>
+		<form action="inputData.php" method="GET">
+		
+		<input type="text" name="fname" placeholder="First Name"/>
+		<input type="text" name="lname" placeholder="Last Name"/>
+		<input type="text" name="age" placeholder="Age"/>
+		<input type="submit" value="Insert Data"/>
+	
+		</form>
+		<form action="updateData.php" method="GET">
+		
+		<input type="text" name="fname" placeholder="First Name"/>
+		<input type="text" name="age" placeholder="New Age"/>
+		<input type="submit" value="Update Data"/>
+		</form>
+		<form action="deleteData.php" method="GET">
+		
+		<input type="text" name="sel" placeholder="Enter name"/>
+		<input type="submit" value="Delete Rows"/>
+	
+		</form>
+		</form>
+	</body>
+
+
+
+
+<html>

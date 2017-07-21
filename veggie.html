@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+		<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+		<!--<script src="scripts/jquery-1.7.1.min.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>-->
+		
+
+	<link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+  <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+		<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+		<!--<script src="scripts/jquery-1.7.1.min.js"></script>-->
+		<script src="bootstrap/js/bootstrap.js"></script>
+		
+   
+	
+<script>
+    var q = 3;
+
+function init()
+		{   console.log("in init");
+			ev=new EventSource("b.php");
+			ev.addEventListener("Data",populate,true);
+			console.log("called b.php");
+			//txt=document.getElementById("mssg");
+			
+			//chatbox=document.getElementById("inner");
+			
+			
+			//sd.onclick=Send;
+		}
+
+		function populate(event)
+		{	console.log("event : "+event.data);
+		     //
+		    //sd.innerHTML = event.data;
+			
+			sd=document.getElementById(q);
+			console.log("q is " + q);
+			
+			w = event.data.split(" ");
+			console.log("w is  : " +w[0]);
+			console.log("w is  : " +w[1]);
+			sd.className = "prod"+q;
+			sd.innerHTML = '<img src="pic/'+w[0]+'.jpg" class="img-rounded" alt="Cinque Terre" width="280" height="236">\
+  <p><h3 ondragstart="dragStart(event)"  ondragend="ccc(this)"  draggable="true" id="gra" style= "color:black">\
+   '+w[1]+'</h3></p>\
+  <p class="imgDescription" id ="drag1">Price : '+w[2]+'</p>\
+  <p class="imgDescription" id ="drag2">Mysore region</p></div>';
+            q++;
+			//sd.innerHTML += event.data;
+			//chatbox.innerHTML+="Friend : "+event.data+"<br/>";
+		}
+		
+
+   var total = 0;
+function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+}	
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function back(event) {
+      document.getElementById("drag").className ="imgDescription";
+	  }
+
+function dragging(event) {
+     
+    document.getElementById("drag").className = " ";
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+	var nodeCopy = document.getElementById(data).cloneNode(true);
+	nodeCopy.id = "newId";
+    event.target.appendChild(nodeCopy);
+	    removeButton = document.createElement('button');
+        removeButton.appendChild(document.createTextNode("remove"));
+        removeButton.setAttribute('onClick','foo3(this)');
+        event.target.appendChild(removeButton);
+    //document.getElementById("demo").innerHTML = "The p element was dropped";
+}
+
+function foo3(event)
+{
+   console.log("remove" +event);
+   console.log("nodecopy"+event.parentNode);
+   event.remove(removeButton);
+   //event.parentNode.nodeCopy = " ";
+   var w = document.getElementById("newId");
+   console.log("get element "+w);
+   w.parentNode.removeChild( w );
+   //event.parentNode.parentNode.parentNode.removeChild(event.parentNode.parentNode);
+   
+}
+
+function ccc(event){
+
+var r = window.prompt("Enter the quantity");
+	if(event.id == "man")
+	{
+		var totalcost = r*50;
+		total = total + totalcost;
+		window.alert(total);
+		var nodeCopy1 = document.getElementById(totalcost).cloneNode(true);
+	nodeCopy1.id = "newId1";
+    event.target.appendChild(nodeCopy1);
+	}
+	if(event.id == "ora")
+	{
+		var totalcost = r*40;
+		total = total + totalcost;
+		window.alert(total);
+	}
+	if(event.id == "gra")
+	{
+		var totalcost = r*60;
+		total = total + totalcost;
+		window.alert(total);
+	}
+	if(event.id == "ban")
+	{
+		var totalcost = r*60;
+		total = total + totalcost;
+		window.alert(total);
+	}
+	if(event.id == "pom")
+	{
+		var totalcost = r*30;
+		total = total + totalcost;
+		window.alert(total);
+	}
+	if(event.id == "pap")
+	{
+		var totalcost = r*40;
+		total = total + totalcost;
+		window.alert(total);
+	}
+}
+
+function foo()
+			{
+				console.log("hello");
+				var a=document.getElementById("pop");
+				a.className="tag";
+				a.style.color="black";
+				a.innerHTML='<br><br><br><div class="container1" id="d" style="background-color:white; width:600 ; text-align:left" > \
+				<h1>PAYMENT MODE</h1></br></br>\
+				<h1><input type="radio" value="cash" id="cod" onselect="pay()">Cash on delivery</h3>\
+				<h1>Cards </h1>\
+				<h1><input type="radio" value="cash1" id="debit" onselect="pay()"> Debit Cards\
+				<h1><input type="radio" value="cash1" id="credit" ">  Credit Cards\
+				<br> <a href="#" class="btn btn-info btn-lg" onclick="address()">Proceed     </a>\
+				<a href="#" class="btn btn-info btn-lg" onclick="foo1()">close</a></div>';
+				
+				a.style.width="100%";
+				a.style.height="800";
+				a.align="center";
+				console.log("hello1");
+			}
+			
+			function pay(tar , sou)
+			{
+			  //var textnode = document.createTextNode("hel");
+			  //var item = document.getElementById("cod").childNodes[0];
+			  //item.replaceChild(textnode, item.childNodes[0]);	
+				document.getElementById(tar).innerHTML = document.getElementById(sou).innerHTML;
+			}
+			 
+			 
+			function foo1(t)
+			{
+				console.log("foo1 close");
+				var a=document.getElementById("pop");
+				a.innerHTML="";
+				a.className="";
+			}
+			
+			function proceed(q)
+			{
+                var a=document.getElementById("pop");
+				a.className="tag"
+				a.innerHTML = '<br><br><br><div class="container1" id="d" style="background-color:white; width:600 ; text-align:left" > \
+				<h1>YOUR ORDERS WILL BE DELIVERED SOON </h1></br></br>\
+				<a href="#" class="btn btn-info btn-lg" onclick="foo1()">close</a>';
+				//a.className="";
+				
+			}
+			
+			function address(q)
+			{
+			  var a=document.getElementById("pop");
+				a.className="tag"
+				a.innerHTML = '<br><br><br><div class="container1" id="d" style="background-color:white; width:600 ; text-align:left" > </br></br></br></br>\
+				<h1>NAME : <input type ="text" id="add" ></br></br>\
+				   ADDRESS : <textarea row="4" col="50" id ="add" ></textarea></br></br>\
+				   CITY : <input type="city" id="ad"></br></h1></br></br>\
+				 <a href="#" class="btn btn-info btn-lg" onclick="proceed()">Proceed     </a>\
+				<a href="#" class="btn btn-info btn-lg" onclick="foo1()">close</a></div>';
+			}
+
+</script>  
+   
+  
+	<title> online </title>
+	<link href="shop.css" rel="stylesheet">
+	</head>
+	
+	<body onload="init()">
+	 
+	   		<div class="divhead">
+			<div class="subdiv">
+				<a href="signInprod.html" style="color:white">|<strong>SignIn</strong> |</a>
+				<div class="dropdown">
+				<div><strong style = "color:white">Register<strong>|
+					<ul class="dropdown-menu">
+       						<li><a href="Buyersreg.html">Buyers</a></li>
+        					<li><a href="prodReg.html">Producers</a></li>
+    					</ul>
+				</div>
+			</div>
+			 <a href="/vandana/overview.html" style="color:white">Overview</a> |
+			 <a href="/vandana/e-agriculturemanagement" style="color:white">Logout</a>
+			</div>
+				
+		</div>
+		
+
+		</div>
+		</div>
+		</br>
+        <!--<img src="sym.jpg" width="80px" height="80px" style="margin-left:100px">-->
+		<input type="search" id = "search" placeholder="SEARCH HERE" style="margin-left:600px;margin-top:-50px; width:350px;height:40px" autofocus>  
+		<button style = "width:70px;height:35px; backgroundColor: blue ;border-radius:7px; border-color:#000000;color:#008004">Search</button></br></br>
+		<marquee><h2 style="color:#008004"> DRAG AND DROP TO ADD TO CART </h2></marquee>
+		<div class="infobar">
+		<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            
+                     
+         <li><a href="/e-agriculturemanagement.html"><span class="glyphicon glyphicon-home"></span></a></li>
+         <li><a href="/Map.html"><strong>SPECIAL OFFERS</strong></a></li>
+         <li><a href="fruit.html">FRUITS</a>
+		 <li><a href="vegetables.html">VEGETABLES</a></li>
+		 <li><a href="grains.html">GRAINS</a></li>
+		 <li><a href="/olive-oils"></a></li>
+		 <div id="pop" class="pop"></div>
+          
+		</div>
+		</div>
+		<div class="fix">
+		<div class="side">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="e-agriculturemanagement.html">Home</a></li>
+        <li><a href="Overview.html">OVERVIEW</a></li>
+        <li><a href="Bangalorediv.html">Bagalore division</a></li>
+        <li><a href="MysoreDiv.html">Mysore division</a></li>
+      </ul>
+    </div>
+		
+		<div class="side1">
+		Brand
+		<p><input type="checkbox">Organic</p>
+		<p><input type="checkbox">InOrganic</p>
+	
+		</div>
+  
+  
+  <div class="prod1">
+  <img src="pic/beans.jpg" class="img-rounded" alt="Cinque Terre" width="280" height="236">
+  <p><h3 ondragstart="dragStart(event)"  ondragend="ccc(this)"  draggable="true" id="ora" style= "color:black">
+   BEANS</h3></p>
+  <p class="imgDescription" id ="drag1">Price " $40</p>
+  <p class="imgDescription"id ="drag2">Mysore region</p></div>
+  
+ 
+  <div class="prod2">
+  <img src="pic/onions.jpg" class="img-rounded" alt="Cinque Terre" width="280" height="236">
+  <p><h3 ondragstart="dragStart(event)"  ondragend="ccc(this)"  draggable="true" id="gra" style= "color:black">
+   ONIONS</h3></p>
+  <p class="imgDescription" id ="drag1">Price : $60</p>
+  <p class="imgDescription" id ="drag2">Mysore region</p></div>
+  
+  
+<div  id="3">
+
+</div>
+
+<div   id="4">
+
+</div>
+
+<div id="5">
+
+</div>
+
+<div id="6">
+
+</div>
+
+
+
+  
+  
+ 
+    
+	<div class = "drop" id="id" ondrop="drop(event)" ondragover="allowDrop(event)" style="font-style:italics; font-size=600px margin-left:800px"> 
+	<h3>ADD TO CART </h3><div class="cart"  style="height:1200px ; width:320px ;opacity:0.4"></div><!-- margin-left:1500px ; margin-top :-190px">
+	<!--<div style="margin-left:1550px">    <!--style="margin-top:400px ; width:200px ;margin-left:1550px"-->
+	<a href="#" class="btn btn-info btn-lg"  style="margin-top:1000px" onclick="foo()">Payment</a> </div>
+	</div>
+	</div>
+	
+  
+		<div class="foot" width="2500px" style="font-family:Ubuntu Medium;position:absolute;margin-top:1550px;width=100%;background-color:#205c00;font-size:15px;color:#b4ff1f;padding-left:350px;padding-right:350px;">
+			<center><a href="e-agriculture management.html" style="color:#b4ff1f">|<strong>HOME</strong> |</a>
+			<a href="Overview.html" style="color:#b4ff1f"> <strong>OVERVIEW</strong> |</a>
+			<a href="Services.html" style="color:#b4ff1f"> <strong>SERVICES</strong> |</a>
+			<a href="e-agriculture management.html#news" style="color:#b4ff1f"> <strong>NEWS & EVENTS</strong> |</a>
+			<a href="Supports.html" style="color:#b4ff1f"> <strong>SUPPORT</strong> |</a>
+			<a href="Contacts.html" style="color:#b4ff1f"> <strong>CONTACTS</strong> |</a></center>
+			<br>
+			<p><center><strong>Copyright@ ........</strong></center></p>
+		</div>
+		
+	</body>
+	
+	</html>

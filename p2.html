@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head />
+<body onload="clearss()"> 
+	<form>
+		Color <input type="text" id="col" /> <br />
+		Text decoration <input type="text" id="ff" /> <br />
+		<input type="button" value="Add to local storage" onclick="store()" />
+	</form>
+	<script type="text/javascript">
+	<!--
+		function clearss()
+		{
+			localStorage.clear();
+		}
+		function store()
+		{
+			//alert("in store");
+			if (document.getElementById("col").value!="")
+			{
+				localStorage["col"]=document.getElementById("col").value;
+				//alert("col");
+			}
+			if (document.getElementById("ff").value!="")
+			{
+				localStorage["ff"]=document.getElementById("ff").value;
+				//alert("ff");
+			}
+		}
+
+	//-->
+	</script>
+</body>
+</html>

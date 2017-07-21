@@ -1,0 +1,39 @@
+<html>
+<title> </title>
+
+<script>
+    
+		function Send()
+		{txt=document.getElementById("mssg")
+			chatbox=document.getElementById("inner")
+			sd=document.getElementById("snd");
+			chatbox.innerHTML+="Me : "+txt.value+"<br/>";
+			xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=Update;
+			xhr.open("GET","update1.php?data="+txt.value,true);
+			xhr.send();
+		}
+		function Update()
+		{
+			if(xhr.readyState==4 && xhr.status==200)
+			{
+				//Do nothing
+			}
+		}
+
+</script>
+
+
+<body>
+
+<h2> ADD FRUITS </h2>
+<marquee><h2 style="color:#008004"> Enter Image Name , Fruit Name , Price  </h2></marquee>
+<div id="outer">
+<div id="inner">
+</div>
+<input type="text" id ="mssg" /><input type="button" value="send" id="snd" onclick="Send()"/> 
+</div>
+
+</body>
+
+</html>
